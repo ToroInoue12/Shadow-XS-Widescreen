@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shadow XS Widescreen</title>
+    <link rel="icon" type="image/jpg" href="https://github.com/ToroInoue12/Shadow-XS-Widescreen/blob/main/shadow.jpg?raw=true">
+    
+    <style>
+        body, html { 
+            margin: 0; padding: 0; height: 100%; background-color: #000; 
+            display: flex; justify-content: center; align-items: center; overflow: hidden; 
+        }
+        #ruffle { width: 95vw; height: 95vh; display: flex; justify-content: center; align-items: center; }
+    </style>
+</head>
+<body>
+    <div id="ruffle"></div>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("DOMContentLoaded", () => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            document.getElementById("ruffle").appendChild(player);
+            player.style.width = "100%";
+            player.style.height = "100%";
+            player.load("shadow-xs.swf");
+        });
+    </script>
+</body>
+</html>
